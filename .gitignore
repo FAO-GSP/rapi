@@ -1,2 +1,6 @@
+# R
+.Rhistory
+
+# packrat
 packrat/lib*/
 packrat/src*/
