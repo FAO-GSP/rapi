@@ -1,1 +1,5 @@
-R_PROFILE_USER =
+# Unset global Rprofile for packrat initialization
+R_PROFILE_USER=
+
+# Default port for the server
+RAPI_PORT=8000
