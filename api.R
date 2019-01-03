@@ -30,3 +30,13 @@ function(req){
 function(){
   plot(1:10)
 }
+
+
+#* Plot SPC
+#*
+#* @post /test/json
+function(req){
+  json <- fromJSON(req$postBody)
+  spc <- jsonToAqp(json)
+  plot(spc)
+}
