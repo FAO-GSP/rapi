@@ -22,3 +22,11 @@ function(req){
   print(is.data.frame(frame))
   print(frame)
 }
+
+#* Return a test png
+#*
+#* @get /test/plot
+#* @png
+function(){
+  plot(1:10)
+}
