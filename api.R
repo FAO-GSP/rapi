@@ -36,7 +36,7 @@ function(){
 #*
 #* @post /test/json
 function(req){
-  json <- fromJSON(req$postBody)
+  json <- fromJSON(req$postBody, flatten = TRUE)
   spc <- jsonToAqp(json)
   plot(spc)
 }
