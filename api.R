@@ -58,5 +58,19 @@ function(req){
          cf=agg$contributing_fraction, cf.col='black', cf.interval=5,
          layout=c(6,1), strip=strip.custom(bg=grey(0.8)),
          scales=list(x=list(tick.number=4, alternating=3, relation='free')))
-  dev.off()
 }
+
+#* Pair-Wise Dissimilarity
+#*
+#* @post /test/dissimilarity
+#* @png
+function(req){
+  spc <- jsonToAqp(req$postBody)
+  d <- profile_compare(spc, vars=c('organic_carbon', 'ph_h2o_1', 'ecec', 'clay', 'silt', 'sand'),
+                       k=0, max_d=40)
+  round(d, 1)
+  d.diana <- diana(d)
+  par(mar=c(1,1,5,1))
+  plotProfileDendrogram(spc, d.diana, scaling.factor = 0.8, y.offset = 10)
+}
+

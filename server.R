@@ -3,6 +3,9 @@ library(plumber)
 library(jsonlite)
 library(aqp)
 library(sp)
+library(lattice)
+library(cluster)
+library(sharpshootR)
 
 source('parser.R')
 
