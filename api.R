@@ -67,7 +67,7 @@ function(req){
 function(req){
   spc <- jsonToAqp(req$postBody)
   d <- profile_compare(spc, vars=c('organic_carbon', 'ph_h2o_1', 'ecec', 'clay', 'silt', 'sand'),
-                       k=0, max_d=40)
+                       k=0, max_d=100)
   round(d, 1)
   d.diana <- diana(d)
   par(mar=c(1,1,5,1))
