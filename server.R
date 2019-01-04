@@ -1,6 +1,10 @@
 # Load used libraries
 library(plumber)
 library(jsonlite)
+library(aqp)
+library(sp)
+
+source('parser.R')
 
 # Generate the API
 server <- plumb('api.R')
