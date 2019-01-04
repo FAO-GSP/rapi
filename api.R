@@ -38,7 +38,7 @@ function(){
 #* @png
 function(req){
   spc <- jsonToAqp(req$postBody)
-  plot(spc)
+  plot(spc, name = "designation", label = "identifier")
 }
 
 #* Slabs
