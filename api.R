@@ -34,9 +34,9 @@ function(){
 
 #* Plot SPC
 #*
-#* @post /test/json
+#* @post /test/plot_spc
+#* @png
 function(req){
-  json <- fromJSON(req$postBody, flatten = TRUE)
-  spc <- jsonToAqp(json)
+  spc <- jsonToAqp(req$postBody)
   plot(spc)
 }
