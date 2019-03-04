@@ -7,11 +7,12 @@ library(lattice)
 library(cluster)
 library(sharpshootR)
 
+# Load parser from JSON to AQP formats
 source('parser.R')
 
-# Generate the API
+# Generate API
 server <- plumb('api.R')
 
-# Start the server on $RAPI_PORT
+# Start server on $RAPI_PORT
 number = as.numeric(Sys.getenv('RAPI_PORT'))
 server$run(port=number)
